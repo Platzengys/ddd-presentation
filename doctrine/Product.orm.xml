@@ -1,0 +1,19 @@
+<doctrine-mapping>
+    <entity name="Product" table="products">
+        <embedded name="sku" class="Sku"/>
+        <embedded name="name" class="Name"/>
+        <embedded name="price" class="Price"/>
+    </entity>
+
+    <embeddable name="Sku">
+        <id name="sku" type="string" column="sku"/>
+    </embeddable>
+
+    <embeddable name="Name">
+        <field name="sku" type="string" column="name"/>
+    </embeddable>
+
+    <embeddable name="Price">
+        <field name="price" type="string" column="price"/>
+    </embeddable>
+</doctrine-mapping>
